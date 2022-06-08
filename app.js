@@ -78,7 +78,7 @@ function mainMenu(person, people) {
         case "descendants":
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story
-            let personDescendants = findPersonDescendants(person[0], people);
+            // let personDescendants = findPersonDescendants(person[0], people);
             alert(personDescendants);
             break;
         case "restart":
@@ -207,11 +207,11 @@ function searchByTraits(people) {
     let results;
     switch (userInput) {
         case "gender":
-            results = searchByGender(people);
+            searchByGender(people);
             break;
 
         case "dob":
-
+        console.log("dateofbrith")
             break;
 
         case "height":
@@ -297,6 +297,24 @@ function searchByHeight(people) {
         return results;
 }
 
+/**
+ * 
+ * @param {Array} people A collection of people objects
+ * @returns {Array}      A collection of people objects
+ */
+
+function searchByWeight(people) {
+    let userInput =("Please select a weight to search by:\;");
+    let results = people.filter(
+        function (person) {
+            if (userInput === person.weight) {
+                return true;
+            }
+        }
+    );
+    console.log(results);
+    return results;
+}
 
 
 
