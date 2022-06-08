@@ -207,7 +207,7 @@ function searchByTraits(people) {
     let results;
     switch (userInput) {
         case "gender":
-            searchByGender(people);
+           results = searchByGender(people);
             break;
 
         case "dob":
@@ -215,7 +215,7 @@ function searchByTraits(people) {
             break;
 
         case "height":
-
+            results = searchByHeight(people);
             break;
 
         case "eyeColor":
@@ -285,7 +285,7 @@ function searchByName(people) {
  */
     
 function searchByHeight(people) {
-        let userInput = prompt("Please select a height to search by:\:");
+        let userInput = prompt (parseInt("Please select a height to search by:\:"));
         let results = people.filter(
             function (person) {
                 if (userInput === person.height) {
@@ -304,7 +304,7 @@ function searchByHeight(people) {
  */
 
 function searchByWeight(people) {
-    let userInput =("Please select a weight to search by:\;");
+    let userInput = prompt (parseInt("Please select a weight to search by:\:"));
     let results = people.filter(
         function (person) {
             if (userInput === person.weight) {
