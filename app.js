@@ -264,25 +264,6 @@ function searchByGender(people) {
  * @param {Array} people A collection of people objects
  * @returns {Array}      A collection of people objects
  */
-
-function searchByName(people) {
-    let userInput = prompt("Please select a name to search by:\:");
-    let results = people.filter(
-        function (person) {
-            if (userInput === person.name) {
-                return true;
-            }
-        }
-    );
-    console.log(results);
-    return results;
-}
-
-/**
- * 
- * @param {Array} people A collection of people objects
- * @returns {Array}      A collection of people objects
- */
     
 function searchByHeight(people) {
         let userInput = prompt (parseInt("Please select a height to search by:\:"));
@@ -317,8 +298,44 @@ function searchByWeight(people) {
 }
 
 
+/**
+ * 
+ * @param {Array} people A collection of people objects
+ * @returns {Array}      A collection of people objects
+ */
+
+ function searchByEyeColor(people) {
+    let userInput = prompt("Please select a eye color to search by:\:");
+    let results = people.filter(
+        function (person) {
+            if (userInput === person.eyecolor) {
+                return true;
+            }
+        }
+    );
+    console.log(results);
+    return results;
+}
 
 
+/**
+ * 
+ * @param {Array} people A collection of people objects
+ * @returns {Array}      A collection of people objects
+ */
+
+function searchByOccupation(people) {
+    let userInput = prompt("Please select a occupation to search by:\:");
+    let results = people.filter(
+        function (person) {
+            if(userInput === person.occupation) {
+                return true;
+            }
+        }
+    );
+    console.log(results);
+    return results;
+}
 
 
 // "gender": "male",
