@@ -72,13 +72,14 @@ function mainMenu(person, people) {
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
+
             let personFamily = findPersonFamily(person[0], people);
             alert(personFamily);
             break;
         case "descendants":
-            //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
+            // ! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story
-            // let personDescendants = findPersonDescendants(person[0], people);
+            let personDescendants = findPersonDescendants(person[0], people);
             alert(personDescendants);
             break;
         case "restart":
@@ -89,8 +90,7 @@ function mainMenu(person, people) {
             // Stop application execution
             return;
         case "test":
-            searchByTraits(people)
-            console.log("I'm from the test case")
+            let personParents = findPersonParents(person[0], people);
             break;
         default:
 
@@ -147,8 +147,19 @@ function displayPeople(people) {
  * @param {Object} person       A singular object.
  */
 function displayPerson(person) {
-    let personInfo = `First Name: ${person.firstName}\n`;
+    let personInfo = "";
+    for (let property in person) {
+        if (property === "parents" || property === "currentSpouse") {
+            continue
+        }
+        personInfo += `${property} : ${person[property]} +\n`;
+    }
+
+    return (personInfo);
+
+    //let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
+    personInfo += `Gender:`
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -207,11 +218,11 @@ function searchByTraits(people) {
     let results;
     switch (userInput) {
         case "gender":
-           results = searchByGender(people);
+            results = searchByGender(people);
             break;
 
         case "dob":
-        console.log("dateofbrith")
+            results = console.log("dateofbrith")
             break;
 
         case "height":
@@ -219,11 +230,11 @@ function searchByTraits(people) {
             break;
 
         case "eyeColor":
-
+            results = searchByEyeColor(people);
             break;
 
         case "occupation":
-
+            results = searchByOccupation(people);
             break;
 
         default:
@@ -264,18 +275,18 @@ function searchByGender(people) {
  * @param {Array} people A collection of people objects
  * @returns {Array}      A collection of people objects
  */
-    
+
 function searchByHeight(people) {
-        let userInput = prompt (parseInt("Please select a height to search by:\:"));
-        let results = people.filter(
-            function (person) {
-                if (userInput === person.height) {
-                    return true;
-                }
+    let userInput = parseInt(prompt("Please select a height to search by:\:"));
+    let results = people.filter(
+        function (person) {
+            if (userInput === person.height) {
+                return true;
             }
-        );
-        console.log(results);
-        return results;
+        }
+    );
+    console.log(results);
+    return results;
 }
 
 /**
@@ -285,7 +296,7 @@ function searchByHeight(people) {
  */
 
 function searchByWeight(people) {
-    let userInput = prompt (parseInt("Please select a weight to search by:\:"));
+    let userInput = parseInt(prompt("Please select a weight to search by:\:"));
     let results = people.filter(
         function (person) {
             if (userInput === person.weight) {
@@ -304,11 +315,11 @@ function searchByWeight(people) {
  * @returns {Array}      A collection of people objects
  */
 
- function searchByEyeColor(people) {
+function searchByEyeColor(people) {
     let userInput = prompt("Please select a eye color to search by:\:");
     let results = people.filter(
         function (person) {
-            if (userInput === person.eyecolor) {
+            if (userInput === person.eyeColor) {
                 return true;
             }
         }
@@ -328,7 +339,7 @@ function searchByOccupation(people) {
     let userInput = prompt("Please select a occupation to search by:\:");
     let results = people.filter(
         function (person) {
-            if(userInput === person.occupation) {
+            if (userInput === person.occupation) {
                 return true;
             }
         }
@@ -337,12 +348,86 @@ function searchByOccupation(people) {
     return results;
 }
 
+function searchbyUserDefinedTrait(people) {
 
-// "gender": "male",
-// 		"dob": "1/18/1949",
-// 		"height": 71,
-// 		"weight": 175,
-// 		"eyeColor": "brown",
-// 		"occupation": "programmer",
-// 		"parents": [],
-// 		"currentSpouse":
+}
+
+
+// /**
+//  * 
+//  * @param {Array} people  A collection of people-objects 
+//  * @returns {Array}       A collection of people-objects 
+//  */
+
+function findPersonFamily(person, people) {
+    //find spouse
+    let spouseArray = people.filter(
+        function (el) {
+            if(person.currentSpouse === el.id){
+                return true;
+            }
+
+        }
+    );
+}
+//     //find parents
+function findPersonParents(person, people) {
+    let parentsArray = people.filter(
+        function(el) {
+            if(person.parents.includes(el.id)){
+                return true;
+
+            }
+        }
+    );
+    return parentsArray;
+}
+    //siblings 
+function findPersonsibing(person, people) {
+    let siblingsArray = people.filter(
+        function (el) {
+            if (el.parents.includes(person.parents[0]) || el.parents.includes(person.parents[1])){
+                return true;
+            }
+        }
+    );
+    return siblingsArray;
+}
+
+
+// let userInput = prompt("Please select a family to search by:\:");
+// let results = people.filter(
+//     function (person) {
+//         if (userInput === person.family) {
+//             return true;
+//         }
+//     }
+// );
+// console.log(results);
+// return results;
+
+
+
+// /**
+//  * 
+//  * @param {Array} people  A collection of people-objects 
+//  * @returns {Array}       A collection of people-objects
+//  */
+
+function searchForDesecendants(oldperson, people) {
+    let results = people.filter(
+        function (person) {
+            if (userInput === person.desecendants) {
+                return true;
+            }
+        }
+    );
+    console.log(results);
+    return results;
+
+}
+
+//
+//locate a person
+//find that persons desecendants 
+//display that desecendants name
