@@ -419,6 +419,7 @@ function searchForDesecendants(oldperson, people) {
         function (person) {
             if (userInput === person.desecendants) {
                 return true;
+            for (let )
             }
         }
     );
@@ -434,8 +435,12 @@ function searchForDesecendants(oldperson, people) {
 //create if statement 
 //If I create a if statement I must add the userinput and the element
 //create a for loop to invoke the custom iteration hook 
-//If I have to create a for loop I have to add a const with an array. 
-//I also have to add the element. (const element of array1)
+// The for loop will find the desecendants of the person I picked 
+//The for loop is looking at all the people in the data base to see if they match the numbers in the data 
+//If I have to create a for loop I have to know how many times I would like the loop to run. for(let = i 0, i< 10; i++)){
+//If I have to create a for loop I have to add a const with an array.                            console.log(i);
+//I also have to add the element. (const element of array1)                                  }
+
 //I will also have to console log so the results come back to the console.
 //locate a person
 //find that persons desecendants 
