@@ -427,7 +427,16 @@ function searchForDesecendants(oldperson, people) {
 
 }
 
-//
+//create a function for desecendants
+//add perams to the function
+//add a filter
+//add function inside function 
+//create if statement 
+//If I create a if statement I must add the userinput and the element
+//create a for loop to invoke the custom iteration hook 
+//If I have to create a for loop I have to add a const with an array. 
+//I also have to add the element. (const element of array1)
+//I will also have to console log so the results come back to the console.
 //locate a person
 //find that persons desecendants 
 //display that desecendants name
