@@ -451,3 +451,14 @@ function searchForDesecendants(oldperson, people) {
 //locate a person
 //find that persons desecendants 
 //display that desecendants name
+
+
+
+
+function searchForFiveTriats(Triatsperson, people) {
+x = '5 traits';
+y = new RegExp(/a/g);
+while(null != (z=y.exec(x))) {
+   console.log(z);     // output: object
+   console.log(z[0]);  // ouput: "a"
+}
