@@ -353,7 +353,7 @@ function searchbyUserDefinedTrait(people) {
 }
 
 
-// /**
+// /**Finds the spouses,parents, and siblings of a selected name. 
 //  * 
 //  * @param {Array} people  A collection of people-objects 
 //  * @returns {Array}       A collection of people-objects 
@@ -395,20 +395,20 @@ function findPersonsibing(person, people) {
 }
 
 
-// let userInput = prompt("Please select a family to search by:\:");
-// let results = people.filter(
-//     function (person) {
-//         if (userInput === person.family) {
-//             return true;
-//         }
-//     }
-// );
-// console.log(results);
-// return results;
+let userInput = prompt("Please select a family to search by:\:");
+let results = people.filter(
+    function (person) {
+        if (userInput === person.family) {
+            return true;
+        }
+    }
+);
+console.log(results);
+return results;
 
 
 
-// /**
+// /**This function finds a person’s descendants (displays the names of the descendants)
 //  * 
 //  * @param {Array} people  A collection of people-objects 
 //  * @returns {Array}       A collection of people-objects
