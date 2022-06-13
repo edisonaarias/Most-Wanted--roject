@@ -462,6 +462,7 @@ function searchForDesecendants(oldperson, people) {
 
 function searchForFiveTriats(Triatsperson, people) {
     let results = people.filter(
+         }
         x = '5 traits';
         y = new RegExp(/a/g);
         while(null != (z=y.exec(x))) {
@@ -475,7 +476,7 @@ function searchForFiveTriats(Triatsperson, people) {
         while(match = re.exec(str)){
             console.log(match, ' found at : ', match.index); 
 
-        }
+        
     );
     console.log(results);
     return results;
