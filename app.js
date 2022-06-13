@@ -454,18 +454,30 @@ function searchForDesecendants(oldperson, people) {
 
 
 
+/**Function made to find a person with 5 traits
+ * 
+ * @param {Array} Triatsperson  A collection of people-objects 
+ * @param {return} people       A collection of people-objects 
+ */
 
 function searchForFiveTriats(Triatsperson, people) {
-    x = '5 traits';
-    y = new RegExp(/a/g);
-    while(null != (z=y.exec(x))) {
-        console.log(z);     // output: object
-        console.log(z[0]);  // ouput: "a"
+    let results = people.filter(
+        x = '5 traits';
+        y = new RegExp(/a/g);
+        while(null != (z=y.exec(x))) {
+            console.log(z);    
+            console.log(z[0]);
     }
 
-        const str = 'a a a';
-        const re = /a/g;
+            const str = 'a a a';
+            const re = /a/g;
 
-    while(match = re.exec(str)){
-        console.log(match, ' found at : ', match.index); 
-    }
+        while(match = re.exec(str)){
+            console.log(match, ' found at : ', match.index); 
+
+        }
+    );
+    console.log(results);
+    return results;
+
+}
