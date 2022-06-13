@@ -419,7 +419,13 @@ function searchForDesecendants(oldperson, people) {
         function (person) {
             if (userInput === person.desecendants) {
                 return true;
-            for (let )
+            for (let i = 0; i < oldperson.options.length; i++) {
+            
+            if (selectObject.options[i].selected) {
+
+            }
+        }
+            numberSelected;
             }
         }
     );
