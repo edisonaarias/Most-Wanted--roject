@@ -32,6 +32,7 @@ function app(people) {
             //! TODO #4: Declare a searchByTraits (multiple traits) function //////////////////////////////////////////
             //! TODO #4a: Provide option to search for single or multiple //////////////////////////////////////////
             searchResults = searchByTraits(people);
+            displayPeople(searchResults)
             break;
         default:
             // Re-initializes the app() if neither case was hit above. This is an instance of recursion.
@@ -369,6 +370,7 @@ function findPersonFamily(person, people) {
 
         }
     );
+    alert('Here is spouses:', displayPeople(spouseArray))
 }
 //     //find parents
 function findPersonParents(person, people) {
@@ -401,10 +403,12 @@ let results = people.filter(
         if (userInput === person.family) {
             return true;
         }
-    }
+        return results;
+        console.log(results);
+} 
 );
-console.log(results);
-return results;
+
+
 
 
 
@@ -460,25 +464,25 @@ function searchForDesecendants(oldperson, people) {
  * @param {return} people       A collection of people-objects 
  */
 
-function searchForFiveTriats(Triatsperson, people) {
-    let results = people.filter(
-         }
-        x = '5 traits';
-        y = new RegExp(/a/g);
-        while(null != (z=y.exec(x))) {
-            console.log(z);    
-            console.log(z[0]);
-    }
+// function searchForFiveTriats(Triatsperson, people) {
+//     let results = people.filter(
+//          }
+//         x = '5 traits';
+//         y = new RegExp(/a/g);
+//         while(null != (z=y.exec(x))) {
+//             console.log(z);    
+//             console.log(z[0]);
+//     }
 
-            const str = 'a a a';
-            const re = /a/g;
+//             const str = 'a a a';
+//             const re = /a/g;
 
-        while(match = re.exec(str)){
-            console.log(match, ' found at : ', match.index); 
+//         while(match = re.exec(str)){
+//             console.log(match, ' found at : ', match.index); 
 
         
-    );
-    console.log(results);
-    return results;
+//     );
+//     console.log(results);
+//     return results;
 
-}
+// }
